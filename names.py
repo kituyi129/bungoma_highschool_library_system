@@ -1,2 +1,0 @@
-x="peter"
-print(x)
