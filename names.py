@@ -1,0 +1,2 @@
+x="peter"
+print(x)
