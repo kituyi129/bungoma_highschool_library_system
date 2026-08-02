@@ -1,2 +1,2 @@
 counties=['nrb','ksm','mbsa']
-print(counties)
+print(counties) ##counties in kenya
