@@ -1,0 +1,2 @@
+x="nairobi"
+print(x)
