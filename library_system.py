@@ -9,9 +9,9 @@ class Book:
 #  __ str__ is called double underscore. its user-friendly string representation of an object.
 # TODO: return formatted string, e.g."'Dune' by Frank Herbert (Available)"
         return (f"library_book:{self.title},"
-               f"Author:{self.author},"
-               f"isbn:{self.isbn},"            
-               f"checked_out:{'YES' if self.is_checked_out else 'NO'}") ##inline command  
+        f"Author:{self.author},"
+        f"isbn:{self.isbn},"            
+        f"checked_out:{'YES' if self.is_checked_out else 'NO'}") ##inline command  
         
 class Library:
     def __init__(self):
@@ -75,8 +75,8 @@ library.checkout_book("10001")
 
 
 
-##return books
-#return_book("10000")
+#return books
+return_book("10000")
     
          
 #def find_by_author(self, author):
