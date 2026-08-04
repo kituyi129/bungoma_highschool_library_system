@@ -1,2 +1,0 @@
-x="nairobi"
-print(x)
