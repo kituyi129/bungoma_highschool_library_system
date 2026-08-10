@@ -19,16 +19,18 @@ class Library:
               
     def add_book(self,book):  # add books to a dictionary stated above
         self.book=book
-        self.books.append(book)  #intialize a key with ISBN in an empty list  
+        self.books[book.isbn]=book  #intialize a key with ISBN into a dcictionary  
         print(f"Added a book:{book.title},{book.author},{book.isbn}, to a library")
  
     def checkout_book(self,isbn):
         self.isbn=isbn
-        for book in self.books:
-            if book.isbn==isbn and not book.is_checkout_book:
-                book.is_checkout_book==True 
-                print("you have borrowed",{book.title},{book.author},{book.isbn})
+        if isbn in self.books:
+            book = self.books[isbn]
+            if not book.is_checked_out:
+                book.is_checked_out=True 
+                print(f"you have borrowed {book.title} by {book.author} (ISBN: {book.isbn})")
                 return True
+            else:
                 print("book not available, or has been borrowed")
                     
         
@@ -40,23 +42,29 @@ class Library:
                     book.checkout_book=False
                     print("you have returned",{book.title})
                     return True
+                else:
                     print("book not available, or has been borrowed")
 
     def list_books(self):
         if not self.books: ## checks if a list is empty
             print("No books in library")
             return
-            
+           
         for book in self.books:   ## loop for print list values
             print(book)
             
-    #def find_by_author(self, author):
+    def find_by_author(self, author):
+            for book in self.books:
+                if book.author==author:
+                    print(book)
+                    return True
+                return False
             
 ### create books from Book class       
-book1=Book("software engineering","Charles megon","10000")
-book2=Book("calculus","Grigorii jeff","10001")
-book3=Book("E-commerce","Ken morris","10002")
-book4=Book("Accounting","yunis musa","10003")
+book1=Book("software engineering","Charles megon","100")
+book2=Book("calculus","Grigorii jeff","101")
+book3=Book("E-commerce","Ken morris","102")
+book4=Book("Accounting","yunis musa","103")
 
 ## creating objects from Library class
 library=Library()
@@ -64,27 +72,21 @@ library.add_book(book1)
 library.add_book(book2)
 library.add_book(book3)
 library.add_book(book4)
-library.add_book(Book("Java","ken","10005")) ## adding a book manually
+library.add_book(Book("Java","ken","105")) ## adding a book manually
 
 
 ## list library Books function
 library.list_books()
 
-library.checkout_book("10003")
-library.checkout_book("10001")
-library.checkout_book("10002")
-
-
+#check-out books from the library
+library.checkout_book("103")
+library.checkout_book("101")
+library.checkout_book("102")
+library.checkout_book("102")
 
 #return books
-return_book("10003") #changed return isdn
-    
-         
-#def find_by_author(self, author):
-# TODO
-#    pass
-
-#    def list_available_books(self):
-list_books()# calling function to list all books in the library
+library.return_book("103") #changed return isdn
+            
+library.list_books()# calling function to list all books in the library
 
 
