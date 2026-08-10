@@ -16,12 +16,13 @@ class Book:
 class Library:
     def __init__(self):
         self.books={} # isbn -> Book
-              
+     option 1:      
     def add_book(self,book):  # add books to a dictionary stated above
         self.book=book
         self.books[book.isbn]=book  #intialize a key with ISBN into a dcictionary  
         print(f"Added a book:{book.title},{book.author},{book.isbn}, to a library")
- 
+
+    option 2: 
     def checkout_book(self,isbn):
         self.isbn=isbn
         if isbn in self.books:
@@ -33,7 +34,7 @@ class Library:
             else:
                 print("book not available, or has been borrowed")
                     
-        
+    option 3:     
     def return_book(self,isbn):
         self.isbn=isbn
         for book in self.books:
@@ -44,15 +45,15 @@ class Library:
                     return True
                 else:
                     print("book not available, or has been borrowed")
-
+    option 4: 
     def list_books(self):
         if not self.books: ## checks if a list is empty
             print("No books in library")
             return
-           
-        for book in self.books:   ## loop for print list values
-            print(book)
-            
+
+            for book in self.books:   ## loop for print list values
+                print(book)
+    option 5:         
     def find_by_author(self, author):
             for book in self.books:
                 if book.author==author:
@@ -85,8 +86,41 @@ library.checkout_book("102")
 library.checkout_book("102")
 
 #return books
-library.return_book("103") #changed return isdn
-            
-library.list_books()# calling function to list all books in the library
+library.return_book("103") 
+ # calling function to list all books in the library         
+library.list_books()
+
+#additional menus function
+    def menu(self):
+        print("Welcome to Bungoma High School Library Management System")
+        print("1. Add a book")
+        print("2. Checkout a book")
+        print("3. Return a book")
+        print("4. List all books")
+        print("5. Find books by author")
+        print("6. Exit")
+
+option = input("Enter your choice (1-6):")  
+if option=="1"
+add_book()
+
+elif option=="2"
+checkout_book()
+
+elif option=="3"
+return_book()
+
+elif option=="4"
+list_books()
+
+elif option=="5"
+find_by_author()
+
+else:
+    print("Invalid option. Please try again.")
+
+
+
+
 
 
