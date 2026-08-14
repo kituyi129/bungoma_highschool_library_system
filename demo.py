@@ -29,7 +29,7 @@ class Library:
             book = self.books[isbn]
             if not book.is_checked_out:
                 book.is_checked_out=True 
-                print(f"you have borrowed {book.title} by {book.author} (ISBN: {book.isbn})")
+                print(f"you have borrowed {book.title} by {book.author} ISBN: {book.isbn})")
                 return True
             else:
                 print("book not available, or has been borrowed")
@@ -40,18 +40,21 @@ class Library:
             if book.isbn==isbn:
                 if book.checkout_book:
                     book.checkout_book=False
+                    
                     print("you have returned",{book.title})
                     return True
                 else:
                     print("book not available, or has been borrowed")
+                  
     
     def list_available_books(self):
         if not self.books: ## checks if a list is empty
             print("No books in library")
             return
-        else:
-            for book in self.books:   ## loop for print list values
-                print(self.book)
+        
+        print("--------Available books in library:----------")
+        for book in self.books.values():   ## loop for print list values
+                print(book)
           
     def find_by_author(self, author):
             for book in self.books:
@@ -66,20 +69,15 @@ book2=Book("calculus","Grigorii jeff","101")
 book3=Book("E-commerce","Ken morris","102")
 book4=Book("Accounting","yunis musa","103")
 
-## creating objects from Library class
-#library=Library()
-#library.add_book(book1)
-#library.add_book(book2)
-#library.add_book(book3)
-#library.add_book(book4)
-#library.add_book(Book("Java","ken","105")) ## adding a book manually
 
 ## list library Books function
-#library.list_books()
-
 lib = Library()
 lib.add_book(Book("Dune", "Frank Herbert", "111"))
 lib.add_book(Book("Foundation", "Isaac Asimov", "222"))
+lib.add_book(book1) #same as lib.add_book(Book("Dune", "Frank Herbert", "111"))
+lib.add_book(book2)
+lib.add_book(book3)
+lib.add_book(book4)
 
 print("-------------------added above books-----------------------------------------------")
 print("-------------------added above books-----------------------------------------------")
