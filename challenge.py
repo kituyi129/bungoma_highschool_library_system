@@ -65,7 +65,8 @@ book1=Book("software engineering","Charles megon","100")
 book2=Book("calculus","Grigorii jeff","101")
 book3=Book("E-commerce","Ken morris","102")
 book4=Book("Accounting","yunis musa","103")
-
+print("-------------------------------------------------------------------------------------------")
+print("-------------------------------------------------------------------------------------------")
 ## creating objects from Library class
 library=Library()
 library.add_book(book1)
@@ -75,7 +76,8 @@ library.add_book(book4)
 library.add_book(Book("Java","ken","105")) ## adding a book manually
 library.add_book(Book("engineering","Rodgers mugambi","106")) ## adding a book manually
 
-
+print("-------------------------------------------------------------------------------------------")
+print("-------------------------------------------------------------------------------------------")
 ## list library Books function
 #library.list_books()
 
@@ -87,7 +89,7 @@ library.checkout_book("102")
 
 print("-------------------------------------------------------------------------------------------")
 print("-------------------------------------------------------------------------------------------")
-print("-------------------------------------------------------------------------------------------")
+
 
 #return books
 library.return_book("103") #changed return isdn
