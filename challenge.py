@@ -73,7 +73,7 @@ library.add_book(book2)
 library.add_book(book3)
 library.add_book(book4)
 library.add_book(Book("Java","ken","105")) ## adding a book manually
-library.add_book(Book("engineering","Rodgers mugambi","106") end ="\n\n") ## adding a book manually
+library.add_book(Book("engineering","Rodgers mugambi","106")) ## adding a book manually
 
 
 ## list library Books function
