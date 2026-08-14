@@ -45,13 +45,13 @@ class Library:
                 else:
                     print("book not available, or has been borrowed")
     
-    def list_books(self):
+    def list_available_books(self):
         if not self.books: ## checks if a list is empty
             print("No books in library")
             return
-
+        else:
             for book in self.books:   ## loop for print list values
-                print(book)
+                print(self.book)
           
     def find_by_author(self, author):
             for book in self.books:
@@ -67,25 +67,35 @@ book3=Book("E-commerce","Ken morris","102")
 book4=Book("Accounting","yunis musa","103")
 
 ## creating objects from Library class
-library=Library()
-library.add_book(book1)
-library.add_book(book2)
-library.add_book(book3)
-library.add_book(book4)
-library.add_book(Book("Java","ken","105")) ## adding a book manually
-
+#library=Library()
+#library.add_book(book1)
+#library.add_book(book2)
+#library.add_book(book3)
+#library.add_book(book4)
+#library.add_book(Book("Java","ken","105")) ## adding a book manually
 
 ## list library Books function
-library.list_books()
+#library.list_books()
 
-#check-out books from the library
-library.checkout_book("103")
-library.checkout_book("101")
-library.checkout_book("102")
-library.checkout_book("102")
+lib = Library()
+lib.add_book(Book("Dune", "Frank Herbert", "111"))
+lib.add_book(Book("Foundation", "Isaac Asimov", "222"))
 
-#return books
-library.return_book("103") 
- # calling function to list all books in the library         
-library.list_books()
+print("-------------------added above books-----------------------------------------------")
+print("-------------------added above books-----------------------------------------------")
 
+lib.checkout_book("111")
+lib.checkout_book("111") # should fail: already checked out
+lib.checkout_book("999") # should fail: no such ISBN
+print("--------------------borrowed above books-------------------------------------------")
+print("--------------------borrowed above books-------------------------------------------")
+
+lib.list_available_books() # should only show Foundation
+
+print("--------------------available books above in library--------------------------------")
+print("--------------------available books above in library--------------------------------")
+lib.return_book("111")
+
+print("-----------------------------------------------------------------------------------")
+print("-----------------------------------------------------------------------------------")
+lib.list_available_books() # should show both again
