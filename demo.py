@@ -1,6 +1,4 @@
 from unittest import case
-
-
 class Book:
     def __init__(self, title, author, isbn):
         self.title = title
