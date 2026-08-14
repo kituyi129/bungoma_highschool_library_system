@@ -73,10 +73,11 @@ library.add_book(book2)
 library.add_book(book3)
 library.add_book(book4)
 library.add_book(Book("Java","ken","105")) ## adding a book manually
+library.add_book(Book("engineering","Rodgers mugambi","106") end ="\n\n") ## adding a book manually
 
 
 ## list library Books function
-library.list_books()
+#library.list_books()
 
 #check-out books from the library
 library.checkout_book("103")
@@ -84,12 +85,13 @@ library.checkout_book("101")
 library.checkout_book("102")
 library.checkout_book("102")
 
+print("-------------------------------------------------------------------------------------------")
+print("-------------------------------------------------------------------------------------------")
+print("-------------------------------------------------------------------------------------------")
+
 #return books
 library.return_book("103") #changed return isdn
 library.return_book("102")
-
-
-
             
 library.list_books()# calling function to list all books in the library
 
