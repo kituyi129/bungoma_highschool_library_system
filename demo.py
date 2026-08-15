@@ -19,12 +19,14 @@ class Library:
         self.books={} # isbn -> Book
         
     def add_book(self,book):  # add books to a dictionary stated above
+        """Add a book to the library."""
         self.book=book
         self.books[book.isbn]=book  #intialize a key with ISBN into a dcictionary  
         print(f"Added a book:{book.title},{book.author},{book.isbn}, to a library")
 
     
     def checkout_book(self,isbn):
+        print("----------------- Library checkout Catalog---------------------")
         self.isbn=isbn
         if isbn in self.books:
             book = self.books[isbn]
@@ -32,27 +34,32 @@ class Library:
                 book.is_checked_out=True 
                 print(f"you have borrowed {book.title} by {book.author} (ISBN: {book.isbn})")
                 return True
+            
             else:
                 print("book not available, or has been borrowed")
-                    
+
+            if isbn not in self.books:
+                print("isbn not found in library")
+                return False      
         
     def return_book(self,isbn):
         self.isbn=isbn
         for book in self.books:
             if book.isbn==isbn:
-                if book.checkout_book:
-                    book.checkout_book=False
-                    print("you have returned",{book.title})
+                if book.is_checked_out:
+                    book.is_checked_out=False
+                    
+                    print(f"you have returned {book.title}")
                     return True
                 else:
                     print("book not available, or has been borrowed")
             
-    def list_books(self):
+    def list_available_books(self):
         if not self.books: ## checks if a list is empty
             print("No books in library")
             return
-        print("\n--- Library books Catalog ---")
-            
+        print("----------------- Library books Catalog---------------------")
+   
         for book in self.books.values():   ## loop for print list values
             print(book)
            
