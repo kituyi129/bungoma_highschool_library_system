@@ -51,9 +51,10 @@ class Library:
         if not self.books: ## checks if a list is empty
             print("No books in library")
             return
-
-            for book in self.books.values():   ## loop for print list values
-                print(book)
+        print("\n--- Library books Catalog ---")
+            
+        for book in self.books.values():   ## loop for print list values
+            print(book)
            
     def find_by_author(self, author):
             for book in self.books:
