@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 from unittest import case
->>>>>>> demo
 class Book:
     def __init__(self, title, author, isbn):
         self.title = title
@@ -19,24 +16,6 @@ class Book:
         
 class Library:
     def __init__(self):
-<<<<<<< HEAD
-        self.books=[] # isbn -> Book
-              
-    def add_book(self,book):  # add books to a dictionary stated above
-        self.book=book
-        self.books.append(book)  #intialize a key with ISBN in an empty list  
-        print(f"Added a book:{book.title},{book.author},{book.isbn}, to a library")
- 
-    def checkout_book(self,isbn):
-        self.isbn=isbn
-        for book in self.books:
-            if book.isbn==isbn and not book.is_checkout_book:
-                book.is_checkout_book==True 
-                print("you have borrowed",{book.title},{book.author},{book.isbn})
-                return True
-                print("book not available, or has been borrowed")
-                    
-=======
         self.books={} # isbn -> Book
         
     def add_book(self,book):  # add books to a dictionary stated above
@@ -62,7 +41,6 @@ class Library:
             if isbn not in self.books:
                 print("isbn not found in library")
                 return False      
->>>>>>> demo
         
     def return_book(self,isbn):
         self.isbn=isbn
